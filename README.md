@@ -20,8 +20,7 @@ To decide a set of AWS services, I used the following 3 step process-
 
 #### B. Reason behind the chosen services-
 ##### Design
-![Design](/Screen Shot 2020-03-12 at 3.02.53 AM.png)
-Format: ![Alt Text](url)
+![Architecture Diagram](/Screen%20Shot%202020-03-12%20at%203.02.53%20AM.png)
 ##### AWS S3
 i. I have used S3 buckets to store the raw data(Landing bucket) and transformed data (Curated bucket).
 
