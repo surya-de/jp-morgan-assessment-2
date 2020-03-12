@@ -428,3 +428,9 @@ def file_upload():
 		print("AWS credentials are not available")
 		return False
 ```
+### 3. Load Pre processed data
+I have loaded the pre processed data into **Athena** using a serverless lambda function to automate the flow.
+### 4. Aggregation query
+### 5. Cost of services
+
+## Solution Design
