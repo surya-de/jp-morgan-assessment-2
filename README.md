@@ -435,5 +435,13 @@ I have loaded the pre processed data into **Athena** using a serverless lambda f
 
 ## Solution Design
 ### 1. AWS Neptune vs Neo4j
+| Criteria                 | AWS Neptune                                                                                                                                              | Neo4j                                                                                            | Decision     |
+|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|--------------|
+|        Open Source       | It is a closed source managed by amazon.  Hence it limits users to stick to Amazon platform.                                                             | It is an open source and can be deployed on-prem if not willing  to share the data online.       | Neo4j        |
+|  Community Support       | While Amazon has fair decumentation but Neptune  being a relatively new platform the community  support is not yet that wide spread.                     | On the other hand Neo4j has a very good community support  along with the awesome documentation. | Neo4j        |
+| Advanced Data  Analytics | Does not support advanced analytics with solutions  such as spark.                                                                                       | Allows specific delegation for ad hoc reporting and  analytics instances.                        | Neo4j        |
+| Managed Service          | AWS Neptune is a managed service by AWS. Hence, if user is using the AWS stack it can be a better option as it will be easier to configure the pipeline. | If we are using AWS tool stack it will require an extra set of configuration.                    |  AWS Neptune |
+
+Keeping in mind the above points I decided that at this point **Neo4j** will be a better option as it will allow to user to keep the data on premise and it's good community support will help in seamless development.
 ### 2. How to load data?
 ### 3. Design of graph relation
