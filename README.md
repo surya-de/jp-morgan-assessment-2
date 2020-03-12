@@ -435,5 +435,5 @@ I have loaded the pre processed data into **Athena** using a serverless lambda f
 
 ## Solution Design
 ### 1. AWS Neptune vs Neo4j
-### 1. How to load data?
-### 1. Design of graph relation
+### 2. How to load data?
+### 3. Design of graph relation
