@@ -430,6 +430,8 @@ def file_upload():
 ```
 ### 3. Load Pre processed data
 I have loaded the pre processed data into **Athena** using a serverless lambda function to automate the flow.
+
+![table](/Screen%20Shot%202020-03-14%20at%2012.56.51%20PM.png)
 ### 4. Aggregation query
 ### 5. Cost of services
 
