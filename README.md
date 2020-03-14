@@ -2,7 +2,16 @@
 
 This repository contains codes and responses to JP Morgans's internship assignment 2.
 
-## Hands on with AWS
+## Contentes
+I.   **Hands on with AWS**- This section caters to provide a brief explanation on the steps performed to solve the 1st question.
+
+II.  **Solution Design**- This section answers the Design question on Graph database.
+
+III. **Folder Structure**- This section is a brief explanation of the project's folder structure.
+
+IV.  **How to execute**- This section has a small writeup on how to execute this project.
+
+## I.Hands on with AWS
 
 The questions asks us to answer the following question-
 ### 1. CloudFormation to configure AWS services
@@ -435,7 +444,7 @@ I have loaded the pre processed data into **Athena** using a serverless lambda f
 ### 4. Aggregation query
 ### 5. Cost of services
 
-## Solution Design
+## II.Solution Design
 ### 1. AWS Neptune vs Neo4j
 | Criteria                 | AWS Neptune                                                                                                                                              | Neo4j                                                                                            | Decision     |
 |--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|--------------|
