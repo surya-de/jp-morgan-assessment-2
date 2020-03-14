@@ -2,7 +2,7 @@
 
 This repository contains codes and responses to JP Morgans's internship assignment 2.
 
-## Contentes
+## Contents
 I.   **Hands on with AWS**- This section caters to provide a brief explanation on the steps performed to solve the 1st question.
 
 II.  **Solution Design**- This section answers the Design question on Graph database.
@@ -11,7 +11,7 @@ III. **Folder Structure**- This section is a brief explanation of the project's 
 
 IV.  **How to execute**- This section has a small writeup on how to execute this project.
 
-## I.Hands on with AWS
+## I. Hands on with AWS
 
 The questions asks us to answer the following question-
 ### 1. CloudFormation to configure AWS services
@@ -444,7 +444,7 @@ I have loaded the pre processed data into **Athena** using a serverless lambda f
 ### 4. Aggregation query
 ### 5. Cost of services
 
-## II.Solution Design
+## II. Solution Design
 ### 1. AWS Neptune vs Neo4j
 | Criteria                 | AWS Neptune                                                                                                                                              | Neo4j                                                                                            | Decision     |
 |--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|--------------|
@@ -457,7 +457,7 @@ Keeping in mind the above points I decided that at this point **Neo4j** will be 
 ### 2. How to load data?
 ### 3. Design of graph relation
 
-## III.Folder Structure
+## III. Folder Structure
 ### How the folders look
 ![folders](Screen%20Shot%202020-03-14%20at%201.24.23%20PM.png)
 ### Explanation
@@ -484,3 +484,33 @@ Keeping in mind the above points I decided that at this point **Neo4j** will be 
 4. **Data**- This is the data folder which contains the two excel raw files.
 
 5. **Resources**- In this folder I am adding all the code files so that the codes can be viewed using any editor.
+
+## IV. How to execute
+### Pre requisite
+To successfully run the code the user must have-
+1. **aws cli** installed and configured with the access keys.
+2. Python3.6 installed
+3. BOTO3 installed.
+### Steps
+Once the environment is set up, perform the following steps-
+1. clone the git repository
+```bash
+git clone 
+```
+2. Navigate to the **codes** folder
+```bash
+cd JPM/codes
+```
+3. Execute the **push_to_s3.py** file along with the path to cloud formation script avalibale in the cloud_formation folder.
+```bash
+python3 push_to_s3.py jpmstack cloud_formation/scripts/final_clf.json cloud_formation/scripts/paramerter.json
+```
+
+Once these steps are performed, the following actions will happen-
+a. AWS services will be created.
+b. Lambda codes will be pushed to the buckets and will be executed atomated.
+c. Raw files will be pushed to the landing bucket.
+d. SQS trigger will be initiated.
+e. Athena database and tables will be created.
+
+The logs can be checked in **cloudwatch**. Once completed the user can check the data in athena database.
