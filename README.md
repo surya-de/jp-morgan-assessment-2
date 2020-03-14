@@ -28,7 +28,7 @@ To decide a set of AWS services, I used the following 3 step process-
 5. AWS SQS
 #### Design
 ![Architecture Diagram](/Screen%20Shot%202020-03-12%20at%209.03.20%20AM.png)
-#### Code Snippet
+#### Code
 ```json
 {
     "AWSTemplateFormatVersion": "2010-09-09",
