@@ -456,3 +456,31 @@ I have loaded the pre processed data into **Athena** using a serverless lambda f
 Keeping in mind the above points I decided that at this point **Neo4j** will be a better option as it will allow to user to keep the data on premise and it's good community support will help in seamless development.
 ### 2. How to load data?
 ### 3. Design of graph relation
+
+## III.Folder Structure
+### How the folders look
+![folders](https://github.com/surya-de/jp-morgan-assessment-2/blob/master/Screen%20Shot%202020-03-14%20at%201.24.23%20PM.png)
+### Explanation
+1. **Architecture**- Contains the LLD and HLD diagrams of the implementation.
+
+2. **codes**- This folder contains the codes in a packaged format which will be deployed during execution. 
+
+   2.1. **cloud_formation**- Contains the init files and some subfolders which holds the cloud formation scripts.
+   
+   2.2. **check_create_cf.py**- This is the python file which will execute the cloud formation scripts to spin the resources.
+   
+   2.3. **scripts**- This folder contains the cloud formation JSON script.
+   
+      2.3.1. **final_clf.json**- The cloud formation json file.
+      
+      2.3.2. **paramerter.json**- This is the parameter json file required to call cloud formation using BOTO3.
+      
+3. **lambda_functions**- This folder contains 2 zip folders which are the deployemnt packages of the 2 lambda functions used.
+
+   3.1. **athena_lambda_function.zip**- The lambda code that calls the athena module on an SQS event.
+   
+   3.2. **lambda.zip**- This contains the lambda code that reads the raw excel files and performs basic transformations.
+   
+4. **Data**- This is the data folder which contains the two excel raw files.
+
+5. **Resources**- In this folder I am adding all the code files so that the codes can be viewed using any editor.
