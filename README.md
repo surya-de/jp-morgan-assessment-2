@@ -508,9 +508,14 @@ python3 push_to_s3.py jpmstack cloud_formation/scripts/final_clf.json cloud_form
 
 Once these steps are performed, the following actions will happen-
 a. AWS services will be created.
+
 b. Lambda codes will be pushed to the buckets and will be executed atomated.
+
 c. Raw files will be pushed to the landing bucket.
+
 d. SQS trigger will be initiated.
+
 e. Athena database and tables will be created.
+
 
 The logs can be checked in **cloudwatch**. Once completed the user can check the data in athena database.
