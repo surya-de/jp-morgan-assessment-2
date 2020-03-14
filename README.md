@@ -459,7 +459,7 @@ Keeping in mind the above points I decided that at this point **Neo4j** will be 
 
 ## III.Folder Structure
 ### How the folders look
-![folders](https://github.com/surya-de/jp-morgan-assessment-2/blob/master/Screen%20Shot%202020-03-14%20at%201.24.23%20PM.png)
+![folders](Screen%20Shot%202020-03-14%20at%201.24.23%20PM.png)
 ### Explanation
 1. **Architecture**- Contains the LLD and HLD diagrams of the implementation.
 
