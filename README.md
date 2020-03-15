@@ -455,6 +455,40 @@ I have loaded the pre processed data into **Athena** using a serverless lambda f
 
 Keeping in mind the above points I decided that at this point **Neo4j** will be a better option as it will allow to user to keep the data on premise and it's good community support will help in seamless development.
 ### 2. How to load data?
+These are the following staeps that I would perform to load data in Neo4j-
+1. I would decide the nodes and properties that can be extracted from the data.
+
+2. In this case I was provided with excel files with multiple tabs. So, I would convert the various tabs into individual csv files using python script.
+
+```python
+# Read excel file.
+read_file = pd.ExcelFile (data_location)
+        # Get the sheets in excel file.
+	file_sheets = read_file.sheet_names
+        for sheets in file_sheets:
+            print('##Reading sheet- ', sheets)
+	    # Read each sheet with column names and
+	    # skip rows if necessary.
+            df = read_file.parse(sheets, header = None, names = col_names, skiprows = 4)
+            # Drop garbage values that are present
+	    # at the end of each sheet.
+	    df.drop(df.tail(6).index,inplace = True)
+            content_buffer = StringIO()
+	    # Convert to csv.
+            df.to_csv(content_buffer)
+```
+
+3. I will use Neo4j's **LOAD CSV** module to load the csv files into the graph database.
+
+```cypher
+LOAD CSV FROM '/path/to/file' AS line
+```
+4. While loading I will mention the **nodes**, **labels** and **properties** in the data.
+
+```cypher
+CREATE (label_name:node_name { property_name: property_value imported as line in last step})
+```
+
 ### 3. Design of graph relation
 
 ## III. Folder Structure
