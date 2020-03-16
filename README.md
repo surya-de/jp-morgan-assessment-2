@@ -491,6 +491,68 @@ CREATE (label_name:node_name { property_name: property_value imported as line in
 
 ### 3. Design of graph relation
 
+To decide the graph relation I have taken the following steps-
+
+**1. Decide Nodes**
+
+Nodes are the data points that is the subject of calculations. 
+
+**Example**
+
+In this dataset we will be interested in knowing the inflow and outflow of the **Counties**.
+
+**Outcome**
+
+I have considered each **county** as a Node and labeled it as County.
+
+**Label-**
+
+:County
+
+**2. Add properties to the node**
+
+Each node will have the following properties which explains the county-
+
+a. **county_name** - Name of the county under consideration.
+
+b. **state_name** - Name of the state of the county under consideration.
+
+c. **state_code** - State code of.
+
+d. **county_code** - Unique county code.
+
+e. **current_population** - Present population of the county.
+
+**3. Add relationships**
+
+To find the relationships I figured the questions that we want to handle. I studied the dashboard and figured out the questions that are pertinent.
+
+Q1. How many pople **moved to** <county name>?
+	
+Q2. How many people **moved out of** <county name> ?
+
+Each node will have 2 relationships -
+
+a. **MOVED_TO** - Each node will have a move to relationship entering the node which signifies the number of people entering the county from a different county.
+
+Example-
+```
+    MOVED_TO
+    count:50
+B -------------> A   
+50 people entered county A from county B.
+```
+
+b. **MOVED_OUT_OF** - Each node will have a moved out of relationship leaving the node which signifies the number of people who left the current node.
+
+Example-
+```
+    MOVED_OUT_OF    
+    count:60    
+B <---------------- A
+60 people left county A for a different county.
+```
+
 ## III. Folder Structure
 ### How the folders look
 ![folders](Screen%20Shot%202020-03-14%20at%201.24.23%20PM.png)
